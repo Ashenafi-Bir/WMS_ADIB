@@ -13,5 +13,8 @@ public class Supplier
     [Required]
     [StringLength(100)]
     public string? InvoiceNumber { get; set; } // Make sure to add unique constraint in the context
+
+    //navigation
+    public ICollection<PurchaseOrder>? PurchaseOrders { get; set; }
 }
 

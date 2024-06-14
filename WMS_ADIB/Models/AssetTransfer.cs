@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WMS_ADIB.Models;
 
-namespace ADIB_WMS.Models
+namespace WMS_ADIB.Models
 {
     public class AssetTransfer
     {

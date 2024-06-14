@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ADIB_WMS.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace WMS_ADIB.Models
 {
@@ -10,5 +11,9 @@ namespace WMS_ADIB.Models
         [Required]
         [StringLength(100)]
         public string? BranchName { get; set; }
+        public ICollection<Requisition>? Requisitions { get; set; }
+        public ICollection<AssetTransfer>? AssetTransfers { get; set; }
+        public ICollection<AssetReturn>? AssetReturns { get; set; }
+        public ICollection<AssetDisposal>? AssetDisposals { get; set; }
     }
 }

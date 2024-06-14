@@ -23,5 +23,7 @@
         public User? PurchaseRequstionRequestedByUser { get; set; }
 
         public User? PurchaseRequstionAuthorizedBy { get; set; }
+        //navigation
+        public ICollection<PurchaseOrder>? PurchaseOrders { get; set; }
     }
 }

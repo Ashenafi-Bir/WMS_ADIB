@@ -1,7 +1,7 @@
-﻿namespace ADIB_WMS.Models;
+﻿namespace WMS_ADIB.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WMS_ADIB.Models;
+
 
 public class Item
 {
@@ -31,4 +31,8 @@ public class Item
 
     [ForeignKey("PONumber")]
     public PurchaseOrder? PurchaseOrder { get; set; }
+    public ICollection<Requisition>? Requisitions { get; set; }
+    public ICollection<AssetTransfer>? AssetTransfers { get; set; }
+    public ICollection<AssetReturn>? AssetReturns { get; set; }
+    public ICollection<AssetDisposal>? AssetDisposals { get; set; }
 }

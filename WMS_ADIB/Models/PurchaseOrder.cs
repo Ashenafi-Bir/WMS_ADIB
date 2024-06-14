@@ -41,5 +41,7 @@ namespace WMS_ADIB.Models
 
         // Navigation property for the related items
         public ICollection<Item>? Items { get; set; }
+     
     }
 }
+
