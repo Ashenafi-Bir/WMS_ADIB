@@ -18,21 +18,21 @@ namespace WMS_ADIB.Models
         public DateTime DateReceived { get; set; }
 
         [Required]
-        public int DeliverUserID { get; set; }
+        public int GRNDeliverUserID { get; set; }
 
-        [ForeignKey("DeliverUserID")]
-        public User? DeliverUser { get; set; }
-
-        [Required]
-        public int InspectUserID { get; set; }
-
-        [ForeignKey("InspectUserID")]
-        public User? InspectUser { get; set; }
+        [ForeignKey("GRNDeliverUserID")]
+        public User? GRNDeliverUser { get; set; }
 
         [Required]
-        public int ReceiveUserID { get; set; }
+        public int GRNInspectUserID { get; set; }
 
-        [ForeignKey("ReceiveUserID")]
-        public User? ReceiveUser { get; set; }
+        [ForeignKey("GRNInspectUserID")]
+        public User? GRNInspectUser { get; set; }
+
+        [Required]
+        public int GRNReceiveUserID { get; set; }
+
+        [ForeignKey("GRNReceiveUserID")]
+        public User? GRNReceiveUser { get; set; }
     }
 }

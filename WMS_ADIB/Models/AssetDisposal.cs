@@ -38,9 +38,9 @@ namespace WMS_ADIB.Models
         [ForeignKey("DisposedByUserID")]
         public User? DisposedBy { get; set; }
 
-        public int? ApprovedByUserID { get; set; }
+        public int? DisposalApprovedByUserID { get; set; }
 
-        [ForeignKey("ApprovedByUserID")]
-        public User? ApprovedBy { get; set; }
+        [ForeignKey("DisposalApprovedByUserID")]
+        public User? DisposalApprovedBy { get; set; }
     }
 }

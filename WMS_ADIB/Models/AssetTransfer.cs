@@ -39,9 +39,9 @@ namespace ADIB_WMS.Models
         public string? Status { get; set; }
 
         [Required]
-        public int AuthorizedByUserID { get; set; }
+        public int AssetTransferAuthorizedByUserID { get; set; }
 
-        [ForeignKey("AuthorizedByUserID")]
-        public User? AuthorizedByUser { get; set; }
+        [ForeignKey("AssetTransferAuthorizedByUserID")]
+        public User? AssetTransferAuthorizedByUser { get; set; }
     }
 }

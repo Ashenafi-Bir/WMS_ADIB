@@ -1,13 +1,27 @@
-﻿namespace WMS_ADIB.Models;
-using System;
-using System.ComponentModel.DataAnnotations;
-
-public class PurchaseRequisition
+﻿namespace WMS_ADIB.Models
 {
-    [Key]
-    public int PRNumber { get; set; }
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    [Required]
-    public DateTime Date { get; set; }
+    public class PurchaseRequisition
+    {
+        [Key]
+        public int PRNumber { get; set; }
+
+        [Required]
+        public DateTime Date { get; set; }
+
+        [Required]
+        [ForeignKey("PurchaseRequstionRequestedByUser")]
+        public int PurchaseRequstionRequestedByUserId { get; set; }
+
+        [Required]
+        [ForeignKey("PurchaseRequstionAuthorizedByUser")]
+        public int PurchaseRequstionAuthorizedById { get; set; }
+
+        public User? PurchaseRequstionRequestedByUser { get; set; }
+
+        public User? PurchaseRequstionAuthorizedBy { get; set; }
+    }
 }
-

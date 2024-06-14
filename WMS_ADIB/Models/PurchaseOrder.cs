@@ -17,6 +17,9 @@ namespace WMS_ADIB.Models
         [Required]
         public int PRNumber { get; set; }
 
+        [ForeignKey("PRNumber")]
+        public PurchaseRequisition? PurchaseRequisition { get; set; }
+
         [Required]
         public int SupplierID { get; set; }
 
@@ -26,15 +29,15 @@ namespace WMS_ADIB.Models
         [Required]
         public DateTime Date { get; set; }
 
-        public int OrderedByUserID { get; set; }
+        public int PurchaseOrderOrderedByID { get; set; }
 
-        [ForeignKey("OrderedByUserID")]
-        public User? OrderedBy { get; set; }
+        [ForeignKey("PurchaseOrderOrderedByUserID")]
+        public User? PurchaseOrderOrderedBy { get; set; }
 
-        public int AuthorizedByUserID { get; set; }
+        public int PurchaseOrderAuthorizedByID { get; set; }
 
-        [ForeignKey("AuthorizedByUserID")]
-        public User? AuthorizedBy { get; set; }
+        [ForeignKey("PurchaseOrderAuthorizedByUserID")]
+        public User? PurchaseOrderAuthorizedBy { get; set; }
 
         // Navigation property for the related items
         public ICollection<Item>? Items { get; set; }

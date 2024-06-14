@@ -37,16 +37,16 @@ namespace WMS_ADIB.Models
         public string? Status { get; set; }
 
         [Required]
-        public int ApprovedByUserID { get; set; }
+        public int RequisitionApprovedByUserID { get; set; }
 
-        [ForeignKey("ApprovedByUserID")]
-        public User? ApprovedByUser { get; set; }
+        [ForeignKey("RequisitionApprovedByUserID")]
+        public User? RequisitionApprovedByUser { get; set; }
 
         [Required]
-        public int AuthorizedByUserID { get; set; }
+        public int RequisitionAuthorizedByUserID { get; set; }
 
-        [ForeignKey("AuthorizedByUserID")]
-        public User? AuthorizedByUser { get; set; }
+        [ForeignKey("RequisitionAuthorizedByUserID")]
+        public User? RequisitionAuthorizedByUser { get; set; }
 
         [Required]
         public int IssuedByUserID { get; set; }

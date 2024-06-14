@@ -30,15 +30,15 @@ namespace WMS_ADIB.Models
         public string? Status { get; set; }
 
         [Required]
-        public int ReceivedByID { get; set; }
+        public int AssetReturnReceivedByID { get; set; }
 
-        [ForeignKey("ReceivedByID")]
-        public User? ReceivedBy { get; set; }
+        [ForeignKey("AssetReturnReceivedByID")]
+        public User? AssetReturnReceivedBy { get; set; }
 
         [Required]
-        public int ApprovedByID { get; set; }
+        public int AssetReturnApprovedByID { get; set; }
 
-        [ForeignKey("ApprovedByID")]
-        public User? ApprovedBy { get; set; }
+        [ForeignKey("AssetReturnApprovedByID")]
+        public User? AssetReturnApprovedBy { get; set; }
     }
 }
