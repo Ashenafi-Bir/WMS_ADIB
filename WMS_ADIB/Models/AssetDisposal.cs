@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ADIB_WMS.Models; // Ensure you have the correct namespace for Item and Branch
+
 
 namespace WMS_ADIB.Models
 {

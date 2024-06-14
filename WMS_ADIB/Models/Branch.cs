@@ -1,5 +1,4 @@
-﻿using ADIB_WMS.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WMS_ADIB.Models
 {

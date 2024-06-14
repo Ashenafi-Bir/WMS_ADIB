@@ -81,15 +81,10 @@ namespace WMS_ADIB.Data
 
             // Branch one-to-many AssetTransfer
             modelBuilder.Entity<AssetTransfer>()
-                .HasOne(at => at.FromBranch)
-                .WithMany(b => b.AssetTransfers)
-                .HasForeignKey(at => at.FromBranchID);
-
-            modelBuilder.Entity<AssetTransfer>()
-                .HasOne(at => at.ToBranch)
-                .WithMany(b => b.AssetTransfers)
-                .HasForeignKey(at => at.ToBranchID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(at => at.FromBranch)        // AssetTransfer has one FromBranch
+                .WithMany(b => b.AssetTransfers)   // Branch has many AssetTransfers
+                .HasForeignKey(at => at.FromBranchID)
+                .OnDelete(DeleteBehavior.Restrict); // Optional: specify delete behavior
 
             // Branch one-to-many AssetReturn
             modelBuilder.Entity<AssetReturn>()
