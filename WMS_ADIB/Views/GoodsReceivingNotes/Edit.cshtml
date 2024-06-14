@@ -1,0 +1,54 @@
+﻿@model WMS_ADIB.Models.GoodsReceivingNote
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GoodsReceivingNote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GRNID" />
+            <div class="form-group">
+                <label asp-for="PONumber" class="control-label"></label>
+                <select asp-for="PONumber" class="form-control" asp-items="ViewBag.PONumber"></select>
+                <span asp-validation-for="PONumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateReceived" class="control-label"></label>
+                <input asp-for="DateReceived" class="form-control" />
+                <span asp-validation-for="DateReceived" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GRNDeliverUserID" class="control-label"></label>
+                <select asp-for="GRNDeliverUserID" class="form-control" asp-items="ViewBag.GRNDeliverUserID"></select>
+                <span asp-validation-for="GRNDeliverUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GRNInspectUserID" class="control-label"></label>
+                <select asp-for="GRNInspectUserID" class="form-control" asp-items="ViewBag.GRNInspectUserID"></select>
+                <span asp-validation-for="GRNInspectUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GRNReceiveUserID" class="control-label"></label>
+                <select asp-for="GRNReceiveUserID" class="form-control" asp-items="ViewBag.GRNReceiveUserID"></select>
+                <span asp-validation-for="GRNReceiveUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

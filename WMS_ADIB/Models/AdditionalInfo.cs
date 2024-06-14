@@ -12,6 +12,6 @@ namespace WMS_ADIB.Models
         public string? Remark { get; set; }
 
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public decimal GrandTotal { get; private set; }
+        public int GrandTotal { get; private set; }
     }
 }

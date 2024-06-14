@@ -1,0 +1,73 @@
+﻿@model WMS_ADIB.Models.Requisition
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Requisition</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BranchID" class="control-label"></label>
+                <select asp-for="BranchID" class ="form-control" asp-items="ViewBag.BranchID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemID" class="control-label"></label>
+                <select asp-for="ItemID" class ="form-control" asp-items="ViewBag.ItemID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateRequested" class="control-label"></label>
+                <input asp-for="DateRequested" class="form-control" />
+                <span asp-validation-for="DateRequested" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateApproved" class="control-label"></label>
+                <input asp-for="DateApproved" class="form-control" />
+                <span asp-validation-for="DateApproved" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateDispatched" class="control-label"></label>
+                <input asp-for="DateDispatched" class="form-control" />
+                <span asp-validation-for="DateDispatched" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequisitionApprovedByUserID" class="control-label"></label>
+                <select asp-for="RequisitionApprovedByUserID" class ="form-control" asp-items="ViewBag.RequisitionApprovedByUserID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequisitionAuthorizedByUserID" class="control-label"></label>
+                <select asp-for="RequisitionAuthorizedByUserID" class ="form-control" asp-items="ViewBag.RequisitionAuthorizedByUserID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssuedByUserID" class="control-label"></label>
+                <select asp-for="IssuedByUserID" class ="form-control" asp-items="ViewBag.IssuedByUserID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

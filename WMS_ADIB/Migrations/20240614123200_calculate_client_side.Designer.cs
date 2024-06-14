@@ -12,8 +12,8 @@ using WMS_ADIB.Data;
 namespace WMS_ADIB.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240614085848_intial")]
-    partial class intial
+    [Migration("20240614123200_calculate_client_side")]
+    partial class calculate_client_side
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace WMS_ADIB.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InfoID"));
 
-                    b.Property<decimal>("GrandTotal")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("GrandTotal")
+                        .HasColumnType("int");
 
                     b.Property<string>("Remark")
                         .HasMaxLength(500)

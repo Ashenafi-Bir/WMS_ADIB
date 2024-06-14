@@ -1,0 +1,59 @@
+﻿@model WMS_ADIB.Models.AssetReturn
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AssetReturn</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReturnID" />
+            <div class="form-group">
+                <label asp-for="BranchID" class="control-label"></label>
+                <select asp-for="BranchID" class="form-control" asp-items="ViewBag.BranchID"></select>
+                <span asp-validation-for="BranchID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemID" class="control-label"></label>
+                <select asp-for="ItemID" class="form-control" asp-items="ViewBag.ItemID"></select>
+                <span asp-validation-for="ItemID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateReturned" class="control-label"></label>
+                <input asp-for="DateReturned" class="form-control" />
+                <span asp-validation-for="DateReturned" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssetReturnReceivedByID" class="control-label"></label>
+                <select asp-for="AssetReturnReceivedByID" class="form-control" asp-items="ViewBag.AssetReturnReceivedByID"></select>
+                <span asp-validation-for="AssetReturnReceivedByID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssetReturnApprovedByID" class="control-label"></label>
+                <select asp-for="AssetReturnApprovedByID" class="form-control" asp-items="ViewBag.AssetReturnApprovedByID"></select>
+                <span asp-validation-for="AssetReturnApprovedByID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

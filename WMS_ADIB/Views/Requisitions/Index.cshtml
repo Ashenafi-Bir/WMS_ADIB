@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WMS_ADIB.Models.Requisition>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRequested)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateApproved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDispatched)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequisitionApprovedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequisitionAuthorizedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuedByUser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRequested)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDispatched)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitionApprovedByUser.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitionAuthorizedByUser.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedByUser.Role)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RequisitionID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RequisitionID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RequisitionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

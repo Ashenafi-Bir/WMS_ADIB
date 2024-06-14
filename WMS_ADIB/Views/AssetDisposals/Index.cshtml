@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WMS_ADIB.Models.AssetDisposal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDisposed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisposedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisposalApprovedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDisposed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisposedBy.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisposalApprovedBy.Role)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DisposalID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DisposalID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DisposalID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

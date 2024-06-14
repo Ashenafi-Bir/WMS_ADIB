@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WMS_ADIB.Models.PurchaseOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PONumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseRequisition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseOrderOrderedByID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseOrderAuthorizedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PONumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseRequisition.PRNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.InvoiceNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderOrderedByID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderAuthorizedBy.Role)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.POId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.POId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.POId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

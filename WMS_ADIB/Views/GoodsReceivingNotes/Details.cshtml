@@ -1,0 +1,48 @@
+﻿@model WMS_ADIB.Models.GoodsReceivingNote
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GoodsReceivingNote</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PurchaseOrder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PurchaseOrder.POId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateReceived)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateReceived)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GRNDeliverUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GRNDeliverUser.Role)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GRNInspectUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GRNInspectUser.Role)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GRNReceiveUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GRNReceiveUser.Role)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.GRNID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
